@@ -2,8 +2,8 @@
  * Programación 1. Práctica 5
  * Autores: ¡¡¡PONED AQUÍ VUESTROS NOMBRES!!!
  * Ultima revisión: ¡¡¡¡!!!!
- * Resumen: Fichero de implementación del módulo principal del programa que 
- *          manipula imágenes BMP en la 5.ª práctica.
+ * Resumen: Fichero de implementación del módulo principal del programa del 
+ *          Juego de la vida en la 5.ª práctica.
  * Nota: El código de este programa está repartido en varios módulos.
  *       Para compilarlo, hay que ejecutar el comando
  *           make juego-vida
