@@ -1,0 +1,97 @@
+{
+    "tasks": [
+        {
+            "label": "Compilar «complejos»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "complejos"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «complejos»",
+            "type": "shell",
+            "command": "bin/complejos",
+            "windows": {
+                "command": "chcp 65001 ; bin\\complejos.exe",
+            },
+            "dependsOn": "Compilar «complejos»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Compilar «juego-vida»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "juego-vida"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «juego-vida»",
+            "type": "shell",
+            "command": "bin/juego-vida",
+            "windows": {
+                "command": "chcp 65001 ; bin\\juego-vida.exe",
+            },
+            "dependsOn": "Compilar «juego-vida»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Compilar «juego-vida-test»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "juego-vida-test"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «juego-vida-test»",
+            "type": "shell",
+            "command": "bin/juego-vida-test",
+            "windows": {
+                "command": "chcp 65001 ; bin\\juego-vida-test.exe",
+            },
+            "dependsOn": "Compilar «juego-vida-test»",
+            "problemMatcher": ["$gcc"],
+        },
+        {
+            "label": "Compilar «bmp»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "bmp"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «bmp»",
+            "type": "shell",
+            "command": "bin/bmp",
+            "windows": {
+                "command": "chcp 65001 ; bin\\bmp.exe",
+            },
+            "dependsOn": "Compilar «bmp»",
+            "problemMatcher": ["$gcc"],
+        },
+    ],
+    "version": "2.0.0"
+}
