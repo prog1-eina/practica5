@@ -24,14 +24,14 @@ using namespace std;
  */
 bool leerImagen(const string nombreFichero, Imagen& imagen) {
     ifstream infile(nombreFichero, ios::binary);
-    if(infile.is_open()){
+    if (infile.is_open()){
         infile.read(imagen.cabecera1, TAM_CABECERA_1);
         if (imagen.cabecera1[0] == 'B' && imagen.cabecera1[1] == 'M') {
-            infile.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(int));
-            infile.read(reinterpret_cast<char*>(&imagen.alto), sizeof(int));
+            infile.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned int));
+            infile.read(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned int));
             infile.read(imagen.cabecera2, TAM_CABECERA_2); 
-            for(unsigned int i = 0; i < imagen.alto; i++){
-                for(unsigned int j = 0; j < imagen.ancho; j++){
+            for (unsigned int i = 0; i < imagen.alto; i++){
+                for (unsigned int j = 0; j < imagen.ancho; j++){
                     infile.read(&imagen.pixels[i][j].rojo, sizeof(char));
                     infile.read(&imagen.pixels[i][j].verde, sizeof(char));
                     infile.read(&imagen.pixels[i][j].azul, sizeof(char));
@@ -64,11 +64,11 @@ void guardarImagen(const string nombreFichero, Imagen imagen) {
     ofstream outFile(nombreFichero, ios::binary);
     if (outFile.is_open()) {
         outFile.write(imagen.cabecera1, TAM_CABECERA_1);
-        outFile.write(reinterpret_cast<char*>(&imagen.ancho), sizeof(int));
-        outFile.write(reinterpret_cast<char*>(&imagen.alto), sizeof(int));
+        outFile.write(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned int));
+        outFile.write(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned int));
         outFile.write(imagen.cabecera2, TAM_CABECERA_2); 
-        for(unsigned int i = 0; i < imagen.alto; i++){
-            for(unsigned int j = 0; j < imagen.ancho; j++){
+        for (unsigned int i = 0; i < imagen.alto; i++){
+            for (unsigned int j = 0; j < imagen.ancho; j++){
                 outFile.write(&imagen.pixels[i][j].rojo, sizeof(char));
                 outFile.write(&imagen.pixels[i][j].verde, sizeof(char));
                 outFile.write(&imagen.pixels[i][j].azul, sizeof(char));
@@ -82,4 +82,3 @@ void guardarImagen(const string nombreFichero, Imagen imagen) {
     }
     outFile.close();
 }
-
