@@ -57,7 +57,7 @@
                 "juego-vida-test"
             ],
             "problemMatcher": ["$gcc"],
-            "group": "build",
+            "group": "test",
         },
         {
             "label": "Ejecutar «juego-vida-test»",
@@ -93,5 +93,11 @@
             "problemMatcher": ["$gcc"],
         },
     ],
+    "presentation": {
+        "showReuseMessage": true,
+        "panel": "shared",
+        "reveal": "always",
+        "focus": true,
+    },
     "version": "2.0.0"
 }
