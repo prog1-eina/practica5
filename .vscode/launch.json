@@ -51,29 +51,6 @@
             "preLaunchTask": "Compilar «juego-vida»"
         },
         {
-            "name": "Depurar «juego-vida-test»",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/bin/juego-vida-test",
-            "args": [],
-            "stopAtEntry": true,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "osx": {
-                "MIMode": "lldb"
-            },
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "Compilar «juego-vida-test»"
-        },
-        {
             "name": "Depurar «bmp»",
             "type": "cppdbg",
             "request": "launch",

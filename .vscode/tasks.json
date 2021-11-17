@@ -47,29 +47,6 @@
             "problemMatcher": ["$gcc"],
         },
         {
-            "label": "Compilar «juego-vida-test»",
-            "type": "shell",
-            "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
-            "args": [
-                "juego-vida-test"
-            ],
-            "problemMatcher": ["$gcc"],
-            "group": "test",
-        },
-        {
-            "label": "Ejecutar «juego-vida-test»",
-            "type": "shell",
-            "command": "bin/juego-vida-test",
-            "windows": {
-                "command": "chcp 65001 ; bin\\juego-vida-test.exe",
-            },
-            "dependsOn": "Compilar «juego-vida-test»",
-            "problemMatcher": ["$gcc"],
-        },
-        {
             "label": "Compilar «bmp»",
             "type": "shell",
             "command": "make",
