@@ -23,11 +23,28 @@
 #include "imagen-bmp.hpp"
 using namespace std;
 
+/* 
+ * Programa de ejemplo que lee la imagen «datos/prog1.bmp» y genera la imagen
+ * «datos/imagen-generada.bmp». Compílalo y ejecútalo una vez para comprobar que
+ * genera la imagen «datos/imagen-generada.bmp» y que esta se puede visualizar
+ * en Visual Studio Code.
+ * Después modifica la función «main» (incluyendo esta especificación) para
+ * resolver el problema solicitado en la tarea 2 de la práctica.
+ */
 int main() {
     static Imagen img;
     string nombreFichero = "datos/prog1.bmp";
+    /* 
+     * Deberás completar el código aquí para pedir el nombre del fichero y
+     * completar la inteacción con el usuario.
+     */
    
     if (leerImagen(nombreFichero, img)) {
+        /*
+         * Aquí irá el código que manipule las imágenes según lo solicitado en
+         * el enunciado de la práctica. Lo ideal es que haya invocaciones a
+         * funciones que realicen esas manipulaciones.
+         */
         guardarImagen("datos/imagen-generada.bmp", img);
         return 0;
     }
