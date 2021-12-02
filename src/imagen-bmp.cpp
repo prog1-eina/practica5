@@ -13,8 +13,16 @@
 #include "imagen-bmp.hpp"
 using namespace std;
 
-
-void leerPixels(ifstream& f, Imagen& imagen) {
+/*
+ * Pre:  «f» está asociado con un fichero externo de formato bitmap de
+ *       dimensiones múltiplo de 4 y máximo 800 píxeles y ya se ha extraído del
+ *       flujo la cabecera, estándose en disposición de extraer el primer píxel;
+ *       imagen.alto e imagen.ancho representan el ancho y alto de la imagen,
+ *       en píxeles.
+ * Post: Ha extraído los píxeles de «f» y se los ha asignado a las primeras
+ *       imagen.alto filas y imagen.ancho columnas del registro «imagen».
+ */
+void leerPixeles(ifstream& f, Imagen& imagen) {
     for (unsigned i = 0; i < imagen.alto; i++) {
         for (unsigned j = 0; j < imagen.ancho; j++) {
             f.get(imagen.pixels[i][j].rojo);
@@ -42,7 +50,7 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
                 f.read(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned));
                 if (imagen.alto <= MAX_ALTO && imagen.alto % 4 == 0) {
                     f.read(imagen.cabecera_parte2, TAM_CABECERA_2); 
-                    leerPixels(f, imagen);
+                    leerPixeles(f, imagen);
                     cout << "Imagen \"" << nombreFichero << "\" leída con éxito." 
                          << endl;
                     f.close();
