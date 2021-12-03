@@ -41,4 +41,4 @@ bool leerImagen(const string nombreFichero, Imagen& imagen);
  * Post: Tras ejecutar este procedimiento, almacena en disco en un fichero de 
  *       nombre «nombreFichero» la imagen BMP de «imagen».
  */
-void guardarImagen(const string nombreFichero, Imagen imagen);
+void guardarImagen(const string nombreFichero, const Imagen& imagen);
