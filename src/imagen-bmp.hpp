@@ -30,8 +30,8 @@ struct Imagen {
  * Post: Si existe el fichero «nombreFichero» y este tiene unas dimensiones
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
  *       memoria la imagen almacenada en un fichero binario en formato BMP y la
- *       función ha devuelto true. En caso contrario, ha devuelto false y ha
- *       escrito en la pantalla un mensaje de error indicando la causa del mismo.
+ *       función devuelve true. En caso contrario, devuelve false y escribe
+ *       en la pantalla un mensaje de error indicando la causa del mismo.
  */
 bool leerImagen(const string nombreFichero, Imagen& imagen);
 

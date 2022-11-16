@@ -19,7 +19,7 @@ using namespace std;
  *       flujo la cabecera, estándose en disposición de extraer el primer píxel;
  *       imagen.alto e imagen.ancho representan el ancho y alto de la imagen,
  *       en píxeles.
- * Post: Ha extraído los píxeles de «f» y se los ha asignado a las primeras
+ * Post: Extrae los píxeles de «f» y se los ha asignado a las primeras
  *       imagen.alto filas y imagen.ancho columnas del registro «imagen».
  */
 void leerPixeles(ifstream& f, Imagen& imagen) {
@@ -37,8 +37,8 @@ void leerPixeles(ifstream& f, Imagen& imagen) {
  * Post: Si existe el fichero «nombreFichero» y este tiene unas dimensiones
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
  *       memoria la imagen almacenada en un fichero binario en formato BMP y la
- *       función ha devuelto true. En caso contrario, ha devuelto false y ha
- *       escrito en la pantalla un mensaje de error indicando la causa del mismo.
+ *       función devuelve true. En caso contrario, devuelve false y escribe
+ *       en la pantalla un mensaje de error indicando la causa del mismo.
  */
 bool leerImagen(const string nombreFichero, Imagen& imagen) {
     ifstream f(nombreFichero, ios::binary);
