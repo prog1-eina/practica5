@@ -4,9 +4,9 @@
  * Ultima revisión: ¡¡¡¡!!!!
  * Resumen: Fichero de implementación del módulo principal del programa del 
  *          Juego de la vida en la 5.ª práctica.
- * Nota: El programa completo está contenido en este fichero, por lo que puede 
- *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
- *       Code.
+ * Nota: El programa completo está contenido en este fichero, por lo que puede 
+ *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
+ *       Code.
  *       No obstante, se ha configurado el fichero «Makefile» para poder 
  *       compilarlo y se han definido tareas de VSC para compilarlo, ejecutarlo 
  *       y depurarlo.
