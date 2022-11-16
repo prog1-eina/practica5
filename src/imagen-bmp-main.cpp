@@ -36,7 +36,7 @@ int main() {
     string nombreFichero = "datos/prog1.bmp";
     /* 
      * Deberás completar el código aquí para pedir el nombre del fichero y
-     * completar la inteacción con el usuario.
+     * completar la interacción con el usuario.
      */
    
     if (leerImagen(nombreFichero, img)) {
