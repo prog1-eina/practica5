@@ -55,8 +55,7 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
                          << endl;
                     f.close();
                     return true;
-                }
-                else {
+                } else {
                     f.close();
                     cout << "El fichero \"" << nombreFichero 
                          << "\" tiene una altura de " << imagen.alto 
@@ -64,8 +63,7 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
                          << ", o no es múltiplo de 4. " << endl;
                     return false;
                 }
-            }
-            else {
+            } else {
                 f.close();
                 cout << "El fichero \"" << nombreFichero 
                      << "\" tiene una anchura de " << imagen.ancho 
@@ -73,15 +71,13 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
                      << ", o no es múltiplo de 4. " << endl;
                 return false;
             }
-        }
-        else {
+        } else {
             f.close();
             cout << "El contenido del fichero \"" << nombreFichero 
                  << "\" no sigue el formato BMP." << endl;
             return false;
         }
-    }
-    else {
+    } else {
         cout << "No se ha encontrado el fichero \"" << nombreFichero << "\"."
              << endl;
         return false;
@@ -109,8 +105,7 @@ void guardarImagen(const string nombreFichero, const Imagen& imagen) {
             }
         }
         cout << "Imagen \"" << nombreFichero << "\" creada con éxito." << endl;
-    }
-    else {
+    } else {
         cerr << "No se ha podido guardar la imagen \"" << nombreFichero << "\"."
              << endl;
     }

@@ -47,8 +47,7 @@ int main() {
          */
         guardarImagen("datos/imagen-generada.bmp", img);
         return 0;
-    }
-    else {
+    } else {
         return 1;
     }
 }
