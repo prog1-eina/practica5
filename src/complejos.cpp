@@ -11,9 +11,7 @@
  *       y depurarlo.
  *       Para compilarlo, se puede ejecutar el comando
  *           make complejos
- *       o, en Windows,
- *           mingw32-make complejos
- *       o ejecutar la tarea "Compilar «complejos»" de VSC
+  *       o ejecutar la tarea "Compilar «complejos»" de VSC
  * 
  *       Para ejecutarlo, una vez compilado, se puede ejecutar el comando
  *           bin/complejos

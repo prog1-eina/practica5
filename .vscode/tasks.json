@@ -10,9 +10,6 @@
             "label": "Compilar «complejos»",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "complejos"
             ],
@@ -33,9 +30,6 @@
             "label": "Compilar «juego-vida»",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "juego-vida"
             ],
@@ -56,9 +50,6 @@
             "label": "Compilar «bmp»",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "bmp"
             ],
@@ -79,9 +70,6 @@
             "label": "Limpiar resultados de compilación",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "clean"
             ],

@@ -12,9 +12,7 @@
  *       y depurarlo.
  *       Para compilarlo, se puede ejecutar el comando
  *           make juego-vida
- *       o, en Windows,
- *           mingw32-make juego-vida
- *       o ejecutar la tarea "Compilar «juego-vida»" de VSC.
+  *       o ejecutar la tarea "Compilar «juego-vida»" de VSC.
  * 
  *       Para ejecutarlo, una vez compilado, hay que ejecutar el comando
  *           bin/juego-vida

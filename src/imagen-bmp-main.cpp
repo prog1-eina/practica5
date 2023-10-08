@@ -8,9 +8,7 @@
  * Nota: El código de este programa está repartido en varios módulos.
  *       Para compilarlo, hay que ejecutar el comando
  *           make bmp
- *       o, en Windows,
- *           mingw32-make bmp
- *       o ejecutar la tarea "Compilar «bmp»" de VSC.
+  *       o ejecutar la tarea "Compilar «bmp»" de VSC.
  * 
  *       Para ejecutarlo, una vez compilado, hay que ejecutar el comando
  *           bin/bmp
