@@ -9,8 +9,8 @@
 #include <string>
 using namespace std;
 
-const unsigned MAX_ANCHO = 800;
-const unsigned MAX_ALTO = 800;
+const unsigned MAX_ANCHO = 4096;
+const unsigned MAX_ALTO = 2160;
 const unsigned TAM_CABECERA_1 = 18;
 const unsigned TAM_CABECERA_2 = 28;
 
@@ -21,8 +21,8 @@ struct Pixel {
 struct Imagen {
     unsigned ancho, alto;
     Pixel pixels[MAX_ANCHO][MAX_ALTO];
-    char cabecera_parte1[TAM_CABECERA_1];
-    char cabecera_parte2[TAM_CABECERA_2];
+    char cabeceraParte1[TAM_CABECERA_1];
+    char cabeceraParte2[TAM_CABECERA_2];
 };
 
 /*

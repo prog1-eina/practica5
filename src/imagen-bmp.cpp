@@ -43,13 +43,13 @@ void leerPixeles(ifstream& f, Imagen& imagen) {
 bool leerImagen(const string nombreFichero, Imagen& imagen) {
     ifstream f(nombreFichero, ios::binary);
     if (f.is_open()){
-        f.read(imagen.cabecera_parte1, TAM_CABECERA_1);
-        if (imagen.cabecera_parte1[0] == 'B' && imagen.cabecera_parte1[1] == 'M') {
+        f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
+        if (imagen.cabeceraParte1[0] == 'B' && imagen.cabeceraParte1[1] == 'M') {
             f.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned));
             if (imagen.ancho <= MAX_ANCHO && imagen.ancho % 4 == 0) {
                 f.read(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned));
                 if (imagen.alto <= MAX_ALTO && imagen.alto % 4 == 0) {
-                    f.read(imagen.cabecera_parte2, TAM_CABECERA_2); 
+                    f.read(imagen.cabeceraParte2, TAM_CABECERA_2); 
                     leerPixeles(f, imagen);
                     cout << "Imagen \"" << nombreFichero << "\" leída con éxito." 
                          << endl;
@@ -93,10 +93,10 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
 void guardarImagen(const string nombreFichero, const Imagen& imagen) {
     ofstream f(nombreFichero, ios::binary);
     if (f.is_open()) {
-        f.write(imagen.cabecera_parte1, TAM_CABECERA_1);
+        f.write(imagen.cabeceraParte1, TAM_CABECERA_1);
         f.write(reinterpret_cast<const char*>(&imagen.ancho), sizeof(unsigned));
         f.write(reinterpret_cast<const char*>(&imagen.alto),  sizeof(unsigned));
-        f.write(imagen.cabecera_parte2, TAM_CABECERA_2); 
+        f.write(imagen.cabeceraParte2, TAM_CABECERA_2); 
         for (unsigned i = 0; i < imagen.alto; i++){
             for (unsigned j = 0; j < imagen.ancho; j++){
                 f.put(imagen.pixels[i][j].rojo);
