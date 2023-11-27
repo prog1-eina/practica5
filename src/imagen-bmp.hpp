@@ -20,7 +20,7 @@ struct Pixel {
 
 struct Imagen {
     unsigned ancho, alto;
-    Pixel pixels[MAX_ANCHO][MAX_ALTO];
+    Pixel pixels[MAX_ALTO][MAX_ANCHO];
     char cabeceraParte1[TAM_CABECERA_1];
     char cabeceraParte2[TAM_CABECERA_2];
 };
