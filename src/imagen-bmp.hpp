@@ -33,7 +33,7 @@ struct Imagen {
  *       función devuelve true. En caso contrario, devuelve false y escribe
  *       en la pantalla un mensaje de error indicando la causa del mismo.
  */
-bool leerImagen(const string nombreFichero, Imagen& imagen);
+bool leerImagen(const string nombreFichero, Imagen &imagen);
 
 
 /*
@@ -41,4 +41,4 @@ bool leerImagen(const string nombreFichero, Imagen& imagen);
  * Post: Tras ejecutar este procedimiento, almacena en disco en un fichero de 
  *       nombre «nombreFichero» la imagen BMP de «imagen».
  */
-void guardarImagen(const string nombreFichero, const Imagen& imagen);
+void guardarImagen(const string nombreFichero, const Imagen &imagen);

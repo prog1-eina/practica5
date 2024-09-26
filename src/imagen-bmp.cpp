@@ -22,7 +22,7 @@ using namespace std;
  * Post: Extrae los píxeles de «f» y se los ha asignado a las primeras
  *       imagen.alto filas y imagen.ancho columnas del registro «imagen».
  */
-void leerPixeles(ifstream& f, Imagen& imagen) {
+void leerPixeles(ifstream &f, Imagen &imagen) {
     for (unsigned i = 0; i < imagen.alto; i++) {
         for (unsigned j = 0; j < imagen.ancho; j++) {
             f.get(imagen.pixels[i][j].rojo);
@@ -40,7 +40,7 @@ void leerPixeles(ifstream& f, Imagen& imagen) {
  *       función devuelve true. En caso contrario, devuelve false y escribe
  *       en la pantalla un mensaje de error indicando la causa del mismo.
  */
-bool leerImagen(const string nombreFichero, Imagen& imagen) {
+bool leerImagen(const string nombreFichero, Imagen &imagen) {
     ifstream f(nombreFichero, ios::binary);
     if (f.is_open()){
         f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
@@ -90,7 +90,7 @@ bool leerImagen(const string nombreFichero, Imagen& imagen) {
  * Post: Tras ejecutar este procedimiento, almacena en disco en un fichero de 
  *       nombre «nombreFichero» la imagen BMP de «imagen».
  */
-void guardarImagen(const string nombreFichero, const Imagen& imagen) {
+void guardarImagen(const string nombreFichero, const Imagen &imagen) {
     ofstream f(nombreFichero, ios::binary);
     if (f.is_open()) {
         f.write(imagen.cabeceraParte1, TAM_CABECERA_1);
