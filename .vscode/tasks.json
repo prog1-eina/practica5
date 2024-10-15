@@ -21,7 +21,8 @@
             "type": "shell",
             "command": "bin/complejos",
             "windows": {
-                "command": "chcp 65001 ; bin\\complejos.exe",
+                "command": "cmd",
+                "args": ["/c", "chcp 65001 && bin\\complejos.exe"]
             },
             "dependsOn": "Compilar «complejos»",
             "problemMatcher": ["$gcc"],
@@ -41,7 +42,8 @@
             "type": "shell",
             "command": "bin/juego-vida",
             "windows": {
-                "command": "chcp 65001 ; bin\\juego-vida.exe",
+                "command": "cmd",
+                "args": ["/c", "chcp 65001 && bin\\juego-vida.exe"]
             },
             "dependsOn": "Compilar «juego-vida»",
             "problemMatcher": ["$gcc"],
@@ -61,7 +63,8 @@
             "type": "shell",
             "command": "bin/bmp",
             "windows": {
-                "command": "chcp 65001 ; bin\\bmp.exe",
+                "command": "cmd",
+                "args": ["/c", "chcp 65001 && bin\\bmp.exe"]
             },
             "dependsOn": "Compilar «bmp»",
             "problemMatcher": ["$gcc"],
