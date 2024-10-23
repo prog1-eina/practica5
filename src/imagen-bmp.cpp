@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
- * Ultima revisión: 17 de noviembre de 2021
+ * Última revisión: 17 de noviembre de 2021
  * Resumen: Fichero de implementación «imagen.hpp» de un módulo denominado
  *          «imagen» para trabajar con imágenes BMP
  *          en la 5ª práctica.

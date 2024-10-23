@@ -2,7 +2,7 @@
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
  * Modificado por: ¡¡¡PON AQUÍ TU NOMBRE!!!
- * Ultima revisión: 21 de noviembre de 2020
+ * Última revisión: 21 de noviembre de 2020
  * Resumen: Fichero de implementación del módulo principal del programa que 
  *          manipula imágenes BMP en la 5ª práctica.
  * Nota: El código de este programa está repartido en varios módulos.
