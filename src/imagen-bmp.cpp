@@ -33,14 +33,14 @@ void leerPixeles(ifstream &f, Imagen &imagen) {
 }
 
 /*
- * Pre:  «nombreFichero» es un fichero binario en formato BMP 
+ * Pre:  «nombreFichero» es un fichero binario en formato BMP.
  * Post: Si existe el fichero «nombreFichero» y este tiene unas dimensiones
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
- *       memoria la imagen almacenada en un fichero binario en formato BMP y la
- *       función devuelve true. En caso contrario, devuelve false y escribe
- *       en la pantalla un mensaje de error indicando la causa del mismo.
+ *       memoria la imagen almacenada en un fichero binario en formato BMP y
+ *       «lecturaOk» vale «true». En caso contrario, escribe en la pantalla un
+ *       mensaje de error indicando la causa del mismo «lecturaOk» vale «false».
  */
-bool leerImagen(const string nombreFichero, Imagen &imagen) {
+void leerImagen(const string nombreFichero, Imagen &imagen, bool &lecturaOk) {
     ifstream f(nombreFichero, ios::binary);
     if (f.is_open()){
         f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
@@ -54,14 +54,14 @@ bool leerImagen(const string nombreFichero, Imagen &imagen) {
                     cout << "Imagen \"" << nombreFichero << "\" leída con éxito." 
                          << endl;
                     f.close();
-                    return true;
+                    lecturaOk = true;
                 } else {
                     f.close();
                     cout << "El fichero \"" << nombreFichero 
                          << "\" tiene una altura de " << imagen.alto 
                          << " píxeles, que es superior al máximo de " << MAX_ALTO 
                          << ", o no es múltiplo de 4. " << endl;
-                    return false;
+                    lecturaOk = false;
                 }
             } else {
                 f.close();
@@ -69,18 +69,19 @@ bool leerImagen(const string nombreFichero, Imagen &imagen) {
                      << "\" tiene una anchura de " << imagen.ancho 
                      << " píxeles, que es superior al máximo de " << MAX_ANCHO 
                      << ", o no es múltiplo de 4. " << endl;
-                return false;
+                lecturaOk = false;
             }
-        } else {
+        }
+        else {
             f.close();
             cout << "El contenido del fichero \"" << nombreFichero 
                  << "\" no sigue el formato BMP." << endl;
-            return false;
+            lecturaOk = false;
         }
     } else {
         cout << "No se ha encontrado el fichero \"" << nombreFichero << "\"."
              << endl;
-        return false;
+        lecturaOk = false;
     }
 }
 

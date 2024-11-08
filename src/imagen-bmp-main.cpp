@@ -31,19 +31,21 @@ using namespace std;
  */
 int main() {
     static Imagen img;
-    string nombreFichero = "datos/prog1.bmp";
+    string nombreFichero = "data/prog1.bmp";
     /* 
      * Deberás completar el código aquí para pedir el nombre del fichero y
      * completar la interacción con el usuario.
      */
-   
-    if (leerImagen(nombreFichero, img)) {
+    
+    bool lecturaCorrecta;
+    leerImagen(nombreFichero, img, lecturaCorrecta);
+    if (lecturaCorrecta) {
         /*
          * Aquí irá el código que manipule las imágenes según lo solicitado en
          * el enunciado de la práctica. Lo ideal es que haya invocaciones a
          * funciones que realicen esas manipulaciones.
          */
-        guardarImagen("datos/imagen-generada.bmp", img);
+        guardarImagen("data/imagen-generada.bmp", img);
         return 0;
     } else {
         return 1;

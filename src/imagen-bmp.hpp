@@ -9,8 +9,8 @@
 #include <string>
 using namespace std;
 
-const unsigned MAX_ANCHO = 4096;
-const unsigned MAX_ALTO = 2160;
+const unsigned MAX_ANCHO = 8192;
+const unsigned MAX_ALTO = 8192;
 const unsigned TAM_CABECERA_1 = 18;
 const unsigned TAM_CABECERA_2 = 28;
 
@@ -26,14 +26,14 @@ struct Imagen {
 };
 
 /*
- * Pre:  «nombreFichero» es un fichero binario en formato BMP 
+ * Pre:  «nombreFichero» es un fichero binario en formato BMP.
  * Post: Si existe el fichero «nombreFichero» y este tiene unas dimensiones
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
- *       memoria la imagen almacenada en un fichero binario en formato BMP y la
- *       función devuelve true. En caso contrario, devuelve false y escribe
- *       en la pantalla un mensaje de error indicando la causa del mismo.
+ *       memoria la imagen almacenada en un fichero binario en formato BMP y
+ *       «lecturaOk» vale «true». En caso contrario, escribe en la pantalla un
+ *       mensaje de error indicando la causa del mismo «lecturaOk» vale «false».
  */
-bool leerImagen(const string nombreFichero, Imagen &imagen);
+void leerImagen(const string nombreFichero, Imagen &imagen, bool &lecturaOk);
 
 
 /*
