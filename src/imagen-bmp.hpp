@@ -1,11 +1,14 @@
 /******************************************************************************\
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
- * Última revisión: 20 de noviembre de 2020
+ * Última revisión: 12 de noviembre de 2024
  * Resumen: Fichero de interfaz «imagen.hpp» de un módulo denominado
  *          «imagen» para trabajar con imágenes BMP
  *          en la 5.ª práctica.
 \******************************************************************************/
+
+#pragma once
+
 #include <string>
 using namespace std;
 
