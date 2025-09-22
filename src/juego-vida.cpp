@@ -1,4 +1,4 @@
-/******************************************************************************\
+/******************************************************************************
  * Programación 1. Práctica 5
  * Autor: ¡¡¡PON AQUÍ TU NOMBRE!!!
  * Última revisión: ¡¡¡¡!!!!
@@ -8,7 +8,7 @@
  *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio 
  *       Code.
  *       No obstante, se ha configurado el fichero «Makefile» para poder 
- *       compilarlo y se han definido tareas de VSC para compilarlo, ejecutarlo 
+ *       compilarlo y se han definido tareas de VSC para compilarlo, ejecutarlo
  *       y depurarlo.
  *       Para compilarlo, se puede ejecutar el comando
  *           make juego-vida
@@ -19,7 +19,7 @@
  *       o, en Windows,
  *           bin\juego-vida.exe
  *       o ejecutar la tarea "Ejecutar «juego-vida»" de VSC.
-\******************************************************************************/
+ *****************************************************************************/
 
 #include <iostream>
 using namespace std;

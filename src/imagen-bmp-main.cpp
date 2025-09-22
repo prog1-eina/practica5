@@ -1,4 +1,4 @@
-/******************************************************************************\
+/******************************************************************************
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
  * Modificado por: ¡¡¡PON AQUÍ TU NOMBRE!!!
@@ -15,7 +15,7 @@
  *       o, en Windows,
  *           bin\bmp.exe
  *       o ejecutar la tarea "Ejecutar «bmp»" de VSC.
-\******************************************************************************/
+ *****************************************************************************/
 #include <iostream>
 #include <string>
 #include "imagen-bmp.hpp"
@@ -23,9 +23,9 @@ using namespace std;
 
 /* 
  * Programa de ejemplo que lee la imagen «datos/prog1.bmp» y genera la imagen
- * «datos/imagen-generada.bmp». Compílalo y ejecútalo una vez para comprobar que
- * genera la imagen «datos/imagen-generada.bmp» y que esta se puede visualizar
- * en Visual Studio Code.
+ * «datos/imagen-generada.bmp». Compílalo y ejecútalo una vez para comprobar
+ * que genera la imagen «datos/imagen-generada.bmp» y que esta se puede
+ * visualizar en Visual Studio Code.
  * Después modifica la función «main» (incluyendo esta especificación) para
  * resolver el problema solicitado en la tarea 2 de la práctica.
  */

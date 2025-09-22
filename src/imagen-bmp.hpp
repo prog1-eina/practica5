@@ -1,11 +1,11 @@
-/******************************************************************************\
+/******************************************************************************
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
  * Última revisión: 12 de noviembre de 2024
  * Resumen: Fichero de interfaz «imagen.hpp» de un módulo denominado
  *          «imagen» para trabajar con imágenes BMP
  *          en la 5.ª práctica.
-\******************************************************************************/
+ *****************************************************************************/
 
 #pragma once
 
@@ -34,7 +34,8 @@ struct Imagen {
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
  *       memoria la imagen almacenada en un fichero binario en formato BMP y
  *       «lecturaOk» vale «true». En caso contrario, escribe en la pantalla un
- *       mensaje de error indicando la causa del mismo «lecturaOk» vale «false».
+ *       mensaje de error indicando la causa del mismo «lecturaOk» vale
+ *       «false».
  */
 void leerImagen(const string nombreFichero, Imagen &imagen, bool &lecturaOk);
 

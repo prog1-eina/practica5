@@ -1,11 +1,11 @@
-/******************************************************************************\
+/******************************************************************************
  * Programación 1. Práctica 5
  * Autores: Miguel Ángel Latre y Rafael Tolosana
  * Última revisión: 17 de noviembre de 2021
  * Resumen: Fichero de implementación «imagen.hpp» de un módulo denominado
  *          «imagen» para trabajar con imágenes BMP
  *          en la 5ª práctica.
-\******************************************************************************/
+ *****************************************************************************/
 
 #include <string>
 #include <iostream>
@@ -16,9 +16,9 @@ using namespace std;
 /*
  * Pre:  «f» está asociado con un fichero externo de formato bitmap de
  *       dimensiones múltiplo de 4 y máximo 800 píxeles y ya se ha extraído del
- *       flujo la cabecera, estándose en disposición de extraer el primer píxel;
- *       imagen.alto e imagen.ancho representan el ancho y alto de la imagen,
- *       en píxeles.
+ *       flujo la cabecera, estándose en disposición de extraer el primer
+ *       píxel; imagen.alto e imagen.ancho representan el ancho y alto de la
+ *       imagen, en píxeles.
  * Post: Extrae los píxeles de «f» y se los ha asignado a las primeras
  *       imagen.alto filas y imagen.ancho columnas del registro «imagen».
  */
@@ -38,29 +38,32 @@ void leerPixeles(ifstream &f, Imagen &imagen) {
  *       correctas, tras ejecutar este procedimiento, «imagen» almacena en
  *       memoria la imagen almacenada en un fichero binario en formato BMP y
  *       «lecturaOk» vale «true». En caso contrario, escribe en la pantalla un
- *       mensaje de error indicando la causa del mismo «lecturaOk» vale «false».
+ *       mensaje de error indicando la causa del mismo «lecturaOk» vale
+ *       «false».
  */
 void leerImagen(const string nombreFichero, Imagen &imagen, bool &lecturaOk) {
     ifstream f(nombreFichero, ios::binary);
     if (f.is_open()){
         f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
-        if (imagen.cabeceraParte1[0] == 'B' && imagen.cabeceraParte1[1] == 'M') {
+        if (imagen.cabeceraParte1[0] == 'B'
+                && imagen.cabeceraParte1[1] == 'M') {
             f.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned));
             if (imagen.ancho <= MAX_ANCHO && imagen.ancho % 4 == 0) {
-                f.read(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned));
+                f.read(reinterpret_cast<char*>(&imagen.alto),
+                       sizeof(unsigned));
                 if (imagen.alto <= MAX_ALTO && imagen.alto % 4 == 0) {
                     f.read(imagen.cabeceraParte2, TAM_CABECERA_2); 
                     leerPixeles(f, imagen);
-                    cout << "Imagen \"" << nombreFichero << "\" leída con éxito." 
-                         << endl;
+                    cout << "Imagen \"" << nombreFichero
+                         << "\" leída con éxito." << endl;
                     f.close();
                     lecturaOk = true;
                 } else {
                     f.close();
                     cout << "El fichero \"" << nombreFichero 
                          << "\" tiene una altura de " << imagen.alto 
-                         << " píxeles, que es superior al máximo de " << MAX_ALTO 
-                         << ", o no es múltiplo de 4. " << endl;
+                         << " píxeles, que es superior al máximo de "
+                         << MAX_ALTO << ", o no es múltiplo de 4. " << endl;
                     lecturaOk = false;
                 }
             } else {
@@ -95,8 +98,9 @@ void guardarImagen(const string nombreFichero, const Imagen &imagen) {
     ofstream f(nombreFichero, ios::binary);
     if (f.is_open()) {
         f.write(imagen.cabeceraParte1, TAM_CABECERA_1);
-        f.write(reinterpret_cast<const char*>(&imagen.ancho), sizeof(unsigned));
-        f.write(reinterpret_cast<const char*>(&imagen.alto),  sizeof(unsigned));
+        f.write(reinterpret_cast<const char*>(&imagen.ancho),
+                sizeof(unsigned));
+        f.write(reinterpret_cast<const char*>(&imagen.alto), sizeof(unsigned));
         f.write(imagen.cabeceraParte2, TAM_CABECERA_2); 
         for (unsigned i = 0; i < imagen.alto; i++){
             for (unsigned j = 0; j < imagen.ancho; j++){
@@ -107,8 +111,8 @@ void guardarImagen(const string nombreFichero, const Imagen &imagen) {
         }
         cout << "Imagen \"" << nombreFichero << "\" creada con éxito." << endl;
     } else {
-        cerr << "No se ha podido guardar la imagen \"" << nombreFichero << "\"."
-             << endl;
+        cerr << "No se ha podido guardar la imagen \"" << nombreFichero
+             << "\"." << endl;
     }
     f.close();
 }
