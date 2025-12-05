@@ -15,7 +15,7 @@ VPATH = $(SOURCE_DIR)
 
 ## COMPILADOR Y OPCIONES DE COMPILACIÓN:
 CXX = g++
-CXXFLAGS = -g -Wall -Wextra
+CXXFLAGS = -Og -Wall -Wextra
 
 
 ## FICHEROS OBJETO (RESULTADOS INTERMEDIOS DE COMPILACIÓN):
@@ -31,7 +31,7 @@ juego-vida: $(SOURCE_DIR)/juego-vida.cpp | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(SOURCE_DIR)/juego-vida.cpp -o $(BIN_DIR)/$@
 
 bmp: $(BMP_OBJECTS) | $(BIN_DIR)
-	$(CXX) -g $(BMP_OBJECTS) -o $(BIN_DIR)/$@ 
+	$(CXX) -Og $(BMP_OBJECTS) -o $(BIN_DIR)/$@ 
 
 $(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@  
