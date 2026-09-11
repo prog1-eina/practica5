@@ -43,51 +43,49 @@ void leerPixeles(ifstream &f, Imagen &imagen) {
  */
 void leerImagen(const string nombreFichero, Imagen &imagen, bool &lecturaOk) {
     ifstream f(nombreFichero, ios::binary);
-    if (f.is_open()){
-        f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
-        if (imagen.cabeceraParte1[0] == 'B'
-                && imagen.cabeceraParte1[1] == 'M') {
-            f.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned));
-            if (imagen.ancho <= MAX_ANCHO && imagen.ancho % 4 == 0) {
-                f.read(reinterpret_cast<char*>(&imagen.alto),
-                       sizeof(unsigned));
-                if (imagen.alto <= MAX_ALTO && imagen.alto % 4 == 0) {
-                    f.read(imagen.cabeceraParte2, TAM_CABECERA_2); 
-                    leerPixeles(f, imagen);
-                    cout << "Imagen \"" << nombreFichero
-                         << "\" leída con éxito." << endl;
-                    f.close();
-                    lecturaOk = true;
-                } else {
-                    f.close();
-                    cout << "El fichero \"" << nombreFichero 
-                         << "\" tiene una altura de " << imagen.alto 
-                         << " píxeles, que es superior al máximo de "
-                         << MAX_ALTO << ", o no es múltiplo de 4. " << endl;
-                    lecturaOk = false;
-                }
-            } else {
-                f.close();
-                cout << "El fichero \"" << nombreFichero 
-                     << "\" tiene una anchura de " << imagen.ancho 
-                     << " píxeles, que es superior al máximo de " << MAX_ANCHO 
-                     << ", o no es múltiplo de 4. " << endl;
-                lecturaOk = false;
-            }
-        }
-        else {
-            f.close();
-            cout << "El contenido del fichero \"" << nombreFichero 
-                 << "\" no sigue el formato BMP." << endl;
-            lecturaOk = false;
-        }
-    } else {
+    if (!f.is_open()) {
         cout << "No se ha encontrado el fichero \"" << nombreFichero << "\"."
              << endl;
         lecturaOk = false;
+        return;
     }
-}
 
+    f.read(imagen.cabeceraParte1, TAM_CABECERA_1);
+    if (!(imagen.cabeceraParte1[0] == 'B'
+            && imagen.cabeceraParte1[1] == 'M')) {
+        f.close();
+        cout << "El contenido del fichero \"" << nombreFichero
+             << "\" no sigue el formato BMP." << endl;
+        lecturaOk = false;
+        return;
+    }
+
+    f.read(reinterpret_cast<char*>(&imagen.ancho), sizeof(unsigned));
+    if (imagen.ancho > MAX_ANCHO && imagen.ancho % 4 != 0) {
+        f.close();
+        cout << "El fichero \"" << nombreFichero  << "\" tiene una anchura de "
+             << imagen.ancho << " píxeles, que es superior al máximo de "
+             << MAX_ANCHO  << ", o no es múltiplo de 4. " << endl;
+        lecturaOk = false;
+        return;
+    }
+    
+    f.read(reinterpret_cast<char*>(&imagen.alto), sizeof(unsigned));
+    if (imagen.alto > MAX_ALTO && imagen.alto % 4 != 0) {
+        f.close();
+        cout << "El fichero \"" << nombreFichero << "\" tiene una altura de "
+             << imagen.alto << " píxeles, que es superior al máximo de "
+             << MAX_ALTO << ", o no es múltiplo de 4. " << endl;
+        lecturaOk = false;
+        return;
+    }
+
+    f.read(imagen.cabeceraParte2, TAM_CABECERA_2); 
+    leerPixeles(f, imagen);
+    cout << "Imagen \"" << nombreFichero << "\" leída con éxito." << endl;
+    f.close();
+    lecturaOk = true;
+}
 
 /*
  * Pre:  ---
