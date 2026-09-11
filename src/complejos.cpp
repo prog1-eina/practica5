@@ -1,7 +1,6 @@
 /******************************************************************************
  * Programación 1. Práctica 5
  * Autor: ¡¡¡PON AQUÍ TU NOMBRE!!!
- * Última revisión: ¡¡¡¡¡¡¡¡¡¡¡!!!!!!!!!
  * Resumen: Fichero de implementación del módulo principal del programa que 
  *          trabaja con números complejos.
  * Nota: El código de este programa no está repartido en varios módulos, por lo

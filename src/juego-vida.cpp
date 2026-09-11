@@ -1,7 +1,6 @@
 /******************************************************************************
  * Programación 1. Práctica 5
  * Autor: ¡¡¡PON AQUÍ TU NOMBRE!!!
- * Última revisión: ¡¡¡¡!!!!
  * Resumen: Fichero de implementación del módulo principal del programa del 
  *          Juego de la vida en la 5.ª práctica.
  * Nota: El programa completo está contenido en este fichero, por lo que puede 
